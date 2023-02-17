@@ -1,0 +1,73 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+  <!--  Filtro    -->
+
+  <div class="d-flex justify-content-center">
+
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Categoria</option>
+      {% for categoria in cat  %}
+          <option value={{cate}}> {{ categoria }} </option>
+      {% endfor %}
+
+    </select>
+    
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Departamento</option>
+      {% for departamento in dep  %}
+        <option value={{cate}}> {{ departamento }} </option>
+      {% endfor %}
+    </select>
+  
+     <button type="button" class="btn btn-primary btn-sm"><a href="#" style="color:white;"> Buscar </a></button>  
+  
+  
+  </div>
+    {% if resul %}
+    {%for anuncio in resul %}
+    <div>
+        
+    </div>
+
+    <div>
+        <p>
+        <div class="card mb-3 mx-auto" style="max-width: 900px; ">
+            <div class="row g-0 "  >
+            <div class="col-md-4">
+                {% if anuncio.banner %}
+                    <img src=" {{ anuncio.banner.url }}" class="img-fluid rounded-start" alt="...">
+                {% else %}
+                    <img src=" {%static 'assets/img/skills.png' %}" class="img-fluid rounded-start" alt="...">
+                {% endif %}
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                <h5 class="card-title"> {{anuncio.titulo}} </h5>
+                <p class="card-text"> {{anuncio.descripcion}} </p>
+                <p class="card-text"><small class="text-muted"> {{anuncio.creador}}/  /{{anuncio.fecha_limite}} </small></p>
+            </div>
+            </div>
+            </div>
+        </div>
+        </p> 
+     
+     </div>
+
+    
+    {% endfor %}
+
+    {% else %}
+    <div class=" d-flex justify-content-center sin_resultados">
+      <h1> No se encontro ningun resultado de la busqueda </h1>
+    </div>
+    <div class=" d-flex justify-content-center">
+      <img src="{% static 'assets/img/not_result.gif'%} "></img>
+    </div>
+    
+    {% endif %}
+
+{% endblock %}

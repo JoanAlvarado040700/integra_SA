@@ -1,0 +1,43 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Formulario para registro de usuario comun  -->
+
+<div class=" d-flex justify-content-center sin_resultados">
+    <h1>Buscar empresa</h1>
+</div>
+
+<div class="card bu_empresa mx-auto">
+    <div class="card-body">
+        <form>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label ">Id empresa</label>
+                <div class="mb-3 d-flex"> 
+                  <input type="text" class="form-control data" id="exampleInputPassword1">
+                    <select class="form-select data_b" aria-label="Default select example" name="dep_select">
+                      <option selected value="">Departamento</option>
+                      {% for departamento in dep  %}
+                          <option value={{departamento.id}}> {{ departamento }} </option>
+                      {% endfor %}
+                </select>
+                </div>
+
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label ">Id usuario</label>
+              <input type="text" class="form-control data" id="exampleInputPassword1">
+            </div>
+            <div class="d-flex justify-content-end">
+              <button type="submit" class="btn btn-primary ">Buscar</button>
+            </div>
+            
+          </form>
+
+
+    </div>
+  </div>
+
+
+{% endblock %}

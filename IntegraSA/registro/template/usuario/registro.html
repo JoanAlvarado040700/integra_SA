@@ -1,0 +1,75 @@
+{% extends "opc/baseEspecial.html" %}
+{% load static %}
+
+{% block content %}
+
+
+
+
+<div class="breadcrumbs">
+    <div class="page-header d-flex align-items-center"> <!-- Descargar imagen para  -->
+        <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 text-center">
+            <h2>Registro</h2>
+            <p>Bienvenido a la nueva plataforma de tra bajo Integra</p>
+            </div>
+        </div>
+        </div>
+    </div>
+</div><!-- End Breadcrumbs -->
+
+<!-- Formulario para registro de usuario comun  -->
+
+
+
+<section id="contact " class="contact section-registro">
+    <div class="container d-flex justify-content-center" data-aos="fade-up">
+        
+        
+        <div class="col-lg-6 mt-4 mt-lg-0 d-flex align-items-stretch">
+            
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form form-registro">
+                
+            <div class="row">
+                
+                <div class="form-group col-md-6">
+                <label for="name">Nombre</label>
+                <input type="text" name="name" class="form-control" id="name" required>
+                </div>
+                <div class="form-group col-md-6">
+                <label for="name">Apellido</label>
+                <input type="text" class="form-control" name="email" id="email" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name">Correo</label>
+                <input type="email" class="form-control" name="subject" id="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Contraseña</label>
+                <input type="password" class="form-control" name="subject" id="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Repita su contraseña</label>
+                <input type="password" class="form-control" name="subject" id="subject" required>
+            </div>
+
+            <div class="my-3">
+                <div class="loading">Cargando</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+            </div>
+            <div class="text-center"><button type="submit">Resgistro</button></div>
+            <span class="d-block text-center my-4 text-muted">&mdash; ¿Ya tienes una cuenta? has click <a href="{% url 'Login_user' %} " >aqui</a>  &mdash;</span>
+            </form>
+
+        </div>
+
+    </div>
+
+    
+  </section>
+</main><!-- End #main -->
+
+{% endblock %}
